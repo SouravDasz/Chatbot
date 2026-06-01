@@ -1,0 +1,22 @@
+<div>
+    <h1>Chatbot</h1>
+
+    {% for i in range(chat_list|length) %}
+        {% if i % 2 == 0 %}
+            <p>User: {{ chat_list[i] }}</p>
+        {% else %}
+            <p>AI: {{ chat_list[i] }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div>
+    <form action="/chat" method="post">
+        <input
+            type="text"
+            name="message"
+            placeholder="Enter what you want to ask"
+        >
+        <button type="submit">Send</button>
+    </form>
+</div>
